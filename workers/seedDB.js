@@ -45,7 +45,12 @@ let structureEventData = (seriesValue, startTime, endTime, {id, venue}) => {
   return structuredEvent;
 }
 
-let insertEachEvent = (parsedData) => {
+let insertEachEvent = () => {
+  // Parse each event in the JSON data file
+  let pathToJSON = path.join(__dirname, "./150UpcomingEvents.json");
+  let jsonData = fs.readFileSync(pathToJSON);
+  let parsedData = JSON.parse(jsonData);
+
   parsedData.events.forEach(function(event){
     let seriesValue = createRandomSeries();
     let startTime, endTime;
@@ -59,12 +64,8 @@ let insertEachEvent = (parsedData) => {
   });
 }
 
-// Parse each event in the JSON data file
-// let pathToJSON = path.join(__dirname, "./150UpcomingEvents.json");
-// let jsonData = fs.readFileSync(pathToJSON);
-// let parsedData = JSON.parse(jsonData);
-// insertEachEvent(parsedData);
-// mongoose.disconnect();
+insertEachEvent();
+// mongoose.disconnect(); // Need figure out how to achieve
 
 exports.createRandomSeries = createRandomSeries;
 exports.convertToStartEndTime = convertToStartEndTime;

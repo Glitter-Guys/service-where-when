@@ -26,4 +26,9 @@ function insertModel(data, callback){
   TimeLocationModel.create(data, callback);
 };
 
+// function countAll(callback){
+//   TimeLocationModel.count({}, callback);
+// };
+
 exports.insertModel = insertModel;
+// exports.countAll = countAll;
