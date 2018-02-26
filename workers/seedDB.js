@@ -1,4 +1,5 @@
 const fs = require('fs');
+const path = require('path');
 const mongoose = require('mongoose');
 const moment = require('moment');
 const timeLocationModel = require('./../db/models/timeLocation.js');
@@ -44,18 +45,29 @@ let structureEventData = (seriesValue, startTime, endTime, {id, venue}) => {
   return structuredEvent;
 }
 
-// Parse each event in the JSON data file
-let jsonData = fs.readFileSync('./150UpcomingEvents.json');
-let parsedData = JSON.parse(jsonData);
-parsedData.events.forEach(function(event){
-  let seriesValue = createRandomSeries();
-  let startTime, endTime;
-  [startTime, endTime] = convertToStartEndTime(event);
-  let structuredEvent = structureEventData(seriesValue, startTime, endTime, event);
+let insertEachEvent = () => {
+  // Parse each event in the JSON data file
+  let pathToJSON = path.join(__dirname, "./150UpcomingEvents.json");
+  let jsonData = fs.readFileSync(pathToJSON);
+  let parsedData = JSON.parse(jsonData);
 
-  // Write to database
-  timeLocationModel.insertModel(structuredEvent, function(err){
-    if(err) console.log(err);
+  parsedData.events.forEach(function(event){
+    let seriesValue = createRandomSeries();
+    let startTime, endTime;
+    [startTime, endTime] = convertToStartEndTime(event);
+    let structuredEvent = structureEventData(seriesValue, startTime, endTime, event);
+
+    // Write to database
+    timeLocationModel.insertModel(structuredEvent, function(err){
+      if(err) console.log(err);
+    });
   });
-});
-// mongoose.disconnect();
+}
+
+insertEachEvent();
+// mongoose.disconnect(); // Need figure out how to achieve
+
+exports.createRandomSeries = createRandomSeries;
+exports.convertToStartEndTime = convertToStartEndTime;
+exports.structureEventData = structureEventData;
+exports.insertEachEvent = insertEachEvent;
