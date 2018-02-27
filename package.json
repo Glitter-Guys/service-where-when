@@ -22,7 +22,8 @@
     "mongodb": "^3.0.2",
     "mongoose": "^5.0.6",
     "react": "^16.2.0",
-    "react-dom": "^16.2.0"
+    "react-dom": "^16.2.0",
+    "react-inlinesvg": "^0.7.5"
   },
   "devDependencies": {
     "babel-core": "^6.26.0",
