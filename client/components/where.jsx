@@ -6,7 +6,7 @@ import SVG  from 'react-inlinesvg'
 let Where = (props) => (
   <div className="where">
     <div className="where__icon">
-      <SVG height="24" width="24" src="./icons/location.svg"></SVG>
+      <SVG viewBox="0 0 24 24" height="24" width="24" src="./icons/location.svg"></SVG>
     </div>
     <div className="where__text">
       <span>Lyft HQ</span>
