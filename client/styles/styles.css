@@ -7,6 +7,7 @@
 body {
   margin: 0;
   background-color: #F6F7F8;
+  font-family: "Graphik Meetup";
 
   display: flex; /* Remove later */
   justify-content: center; /* Remove later */
@@ -18,4 +19,33 @@ body {
   border-radius: 8px;
   width: 350px; /* Will change based on page layout */
   height: 450px /* Remove later */
+  display: flex;
+  flex-direction: column;
+}
+
+.when,
+.where {
+  display: flex;
+  font-size: .875rem;
+  line-height: 1.6;
+  padding: 15px;
+}
+
+.where__icon,
+.when__icon {
+  display: flex;
+  flex-direction: column;
+  margin: 0 20px;
+  stroke: transparent;
+  fill: rgba(46,62,72,.6);
+}
+
+.where span,
+.when span {
+  display: block;
+}
+
+.where address {
+  font-style: normal;
+  color: rgba(46,62,72,.6);
 }

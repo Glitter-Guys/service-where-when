@@ -22,17 +22,25 @@
     "mongodb": "^3.0.2",
     "mongoose": "^5.0.6",
     "react": "^16.2.0",
-    "react-dom": "^16.2.0"
+    "react-dom": "^16.2.0",
+    "react-inlinesvg": "^0.7.5"
   },
   "devDependencies": {
     "babel-core": "^6.26.0",
+    "babel-jest": "^22.4.1",
     "babel-loader": "^7.1.2",
     "babel-preset-es2015": "^6.24.1",
     "babel-preset-react": "^6.24.1",
+    "enzyme": "^3.3.0",
+    "enzyme-adapter-react-16": "^1.1.1",
     "eslint-config-hackreactor": "git://github.com/reactorcore/eslint-config-hackreactor",
     "expect": "^22.4.0",
     "jest": "^22.4.2",
     "nodemon": "^1.15.1",
+    "regenerator-runtime": "^0.11.1",
     "webpack": "^3.11.0"
+  },
+  "babel": {
+      "presets": ["es2015", "react"]
   }
 }
