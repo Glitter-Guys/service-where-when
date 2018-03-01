@@ -6,7 +6,6 @@ var timeLocationSchema = mongoose.Schema({
     type: String,
     unique: true
   },
-  date: Date,
   start_time: Date,
   end_time: Date,
   series: String,

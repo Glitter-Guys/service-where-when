@@ -2,6 +2,7 @@ const express = require('express');
 const path = require('path');
 const app = express();
 const eventDB = require('./../db/models/timeLocation.js');
+const moment = require('moment');
 
 app.use('/event/:eventid', express.static(path.join(__dirname, './../client')));
 
@@ -13,24 +14,38 @@ app.get('/api/event/:eventid', (req, res) => {
       res.status(500).send({ error: err });
     } else {
       let whereData = createWhereData(eventDataFromAPI);
-      res.status(200).json({whereData: whereData});
+      let whenData = createWhenData(eventDataFromAPI);
+      res.status(200).json({whereData: whereData, whenData: whenData});
     }
   });
 });
 
-let createWhereData = (eventData) => {
-  let whereData = {};
-  whereData.venue_name = eventData.venue_name; // Use destructuring here?
-  if(eventData.address_1) whereData.address_1 = eventData.address_1;
-  if(eventData.address_2) whereData.address_2 = eventData.address_2;
-  if(eventData.address_3) whereData.address_3 = eventData.address_3;
-  whereData.city = eventData.city;
-  whereData.state = eventData.state;
-  if(eventData.longitude) whereData.longitude = eventData.longitude;
-  if(eventData.latitude) whereData.latitude = eventData.latitude;
+let createWhereData = ({venue_name, address_1, address_2, address_3, city, longitude, latitude}) => {
+  let whereData = {
+    venue_name: venue_name,
+    city: city
+  };
+  if(address_1) whereData.address_1 = address_1;
+  if(address_2) whereData.address_2 = address_2;
+  if(address_3) whereData.address_3 = address_3;
+  if(longitude) whereData.longitude = longitude;
+  if(latitude) whereData.latitude = latitude;
   return whereData;
 }
 
+let createWhenData = ({start_time, end_time, series}) => {
+  let whenData = {
+    start_time: start_time,
+    end_time: end_time,
+    series: series
+  };
+  let startDate = moment(start_time).format('MM-DD-YYYY');
+  let endDate = moment(end_time).format('MM-DD-YYYY');
+  if(startDate !== endDate){
+    whenData.multiDay = true;
+  }
+  return whenData;
+}
 
 app.listen('8000', '127.0.0.1', () =>
   console.log('Listening on port 8000')

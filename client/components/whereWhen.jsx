@@ -8,7 +8,8 @@ export default class WhereWhen extends React.Component {
   constructor(props){
     super(props)
     this.state = {
-      whereData: {}
+      whereData: {},
+      whenData: {}
     }
   }
 
@@ -19,9 +20,9 @@ export default class WhereWhen extends React.Component {
     fetch('/api/event/' + eventId).then((response) => {
       return response.json();
     }).then((jsonData) => {
-        console.log(jsonData);
         this.setState({
-          whereData: jsonData.whereData
+          whereData: jsonData.whereData,
+          whenData: jsonData.whenData
         })
     }).catch((err) => {
         throw new Error(err);
@@ -31,7 +32,7 @@ export default class WhereWhen extends React.Component {
   render(){
     return (
       <div className="whereWhen">
-        <When />
+        <When whenData={this.state.whenData}/>
         <Where whereData={this.state.whereData} />
       </div>
     )
