@@ -1,6 +1,6 @@
+const app = express();
 const express = require('express');
 const path = require('path');
-const app = express();
 const eventDB = require('./../db/models/timeLocation.js');
 const moment = require('moment');
 
@@ -13,9 +13,10 @@ app.get('/api/event/:eventid', (req, res) => {
     if(err) {
       res.status(500).send({ error: err });
     } else {
-      let whereData = createWhereData(eventDataFromAPI);
-      let whenData = createWhenData(eventDataFromAPI);
-      res.status(200).json({whereData: whereData, whenData: whenData});
+      res.status(200).json({
+        whereData: createWhereData(eventDataFromAPI),
+        whenData: createWhenData(eventDataFromAPI)
+      });
     }
   });
 });
