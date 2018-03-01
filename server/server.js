@@ -20,16 +20,19 @@ app.get('/api/event/:eventid', (req, res) => {
   });
 });
 
-let createWhereData = ({venue_name, address_1, address_2, address_3, city, longitude, latitude}) => {
-  let whereData = {
-    venue_name: venue_name,
-    city: city
-  };
-  if(address_1) whereData.address_1 = address_1;
-  if(address_2) whereData.address_2 = address_2;
-  if(address_3) whereData.address_3 = address_3;
-  if(longitude) whereData.longitude = longitude;
-  if(latitude) whereData.latitude = latitude;
+let createWhereData = ({venue_public, venue_name, address_1, address_2, address_3, city, longitude, latitude}) => {
+  let whereData = {};
+  if(venue_public){
+    whereData = {
+      venue_name: venue_name,
+      city: city
+    };
+    if(address_1) whereData.address_1 = address_1;
+    if(address_2) whereData.address_2 = address_2;
+    if(address_3) whereData.address_3 = address_3;
+    if(longitude) whereData.longitude = longitude;
+    if(latitude) whereData.latitude = latitude;
+  }
   return whereData;
 }
 
