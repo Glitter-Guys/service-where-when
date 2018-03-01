@@ -10,6 +10,10 @@ export default class When extends React.Component {
   }
 
   render(){
+    let { whenData } = this.props;
+    let dateTimeFormat = "dddd, MMMM D YYYY h:mm A";
+    let dateFormat = "dddd, MMMM D YYYY";
+    let timeFormat = "h:mm A";
 
     return (
       <div className="when">
@@ -17,18 +21,18 @@ export default class When extends React.Component {
           <SVG viewBox="0 0 24 24" height="24" width="24" src="./icons/clock.svg"></SVG>
         </div>
         <div className="when__text">
-          {this.props.whenData.multiDay ?
+          {whenData.multiDay ?
             <span>
-              <span><Moment format="dddd, MMMM D YYYY h:mm A">{this.props.whenData.start_time}</Moment></span>
-              <span>to&nbsp;<Moment format="dddd, MMMM D YYYY h:mm A">{this.props.whenData.end_time}</Moment></span>
+              <span><Moment format={dateTimeFormat}>{whenData.start_time}</Moment></span>
+              <span>to&nbsp;<Moment format={dateTimeFormat}>{whenData.end_time}</Moment></span>
             </span>
           :
             <span>
               <span>
-                <Moment format="dddd, MMMM D YYYY">{this.props.whenData.start_time}</Moment>
+                <Moment format={dateFormat}>{whenData.start_time}</Moment>
               </span>
-              <Moment format="h:mm A">{this.props.whenData.start_time}</Moment>&nbsp;to&nbsp;
-              <Moment format="h:mm A">{this.props.whenData.end_time}</Moment>
+              <Moment format={timeFormat}>{whenData.start_time}</Moment>&nbsp;to&nbsp;
+              <Moment format={timeFormat}>{whenData.end_time}</Moment>
             </span>
           }
         </div>
