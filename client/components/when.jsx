@@ -17,16 +17,16 @@ const When = ({ whenData }) => {
       <div className="when__text">
         {whenData.multiDay ?
           <span>
-            <span><Moment format={dateTimeFormat}>{whenData.start_time}</Moment></span>
-            <span>to&nbsp;<Moment format={dateTimeFormat}>{whenData.end_time}</Moment></span>
+            <span><Moment format={dateTimeFormat}>{whenData.startTime}</Moment></span>
+            <span>to&nbsp;<Moment format={dateTimeFormat}>{whenData.endTime}</Moment></span>
           </span>
         :
           <span>
             <span>
-              <Moment format={dateFormat}>{whenData.start_time}</Moment>
+              <Moment format={dateFormat}>{whenData.startTime}</Moment>
             </span>
-            <Moment format={timeFormat}>{whenData.start_time}</Moment>&nbsp;to&nbsp;
-            <Moment format={timeFormat}>{whenData.end_time}</Moment>
+            <Moment format={timeFormat}>{whenData.startTime}</Moment>&nbsp;to&nbsp;
+            <Moment format={timeFormat}>{whenData.endTime}</Moment>
           </span>
         }
       </div>
