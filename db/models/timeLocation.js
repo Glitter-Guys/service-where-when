@@ -1,11 +1,11 @@
 var mongoose = require('mongoose');
+mongoose.connect('mongodb://localhost/timeLocations');
 
 var timeLocationSchema = mongoose.Schema({
   event_id: {
     type: String,
     unique: true
   },
-  date: Date,
   start_time: Date,
   end_time: Date,
   series: String,
@@ -26,9 +26,14 @@ function insertModel(data, callback){
   TimeLocationModel.create(data, callback);
 };
 
+function findModel(id, callback){
+  TimeLocationModel.findOne({"event_id": id}, callback);
+}
+
 // function countAll(callback){
 //   TimeLocationModel.count({}, callback);
 // };
 
 exports.insertModel = insertModel;
+exports.findModel = findModel;
 // exports.countAll = countAll;
