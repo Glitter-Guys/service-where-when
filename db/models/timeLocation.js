@@ -1,33 +1,34 @@
-var mongoose = require('mongoose');
+const mongoose = require('mongoose');
+
 mongoose.connect('mongodb://localhost/timeLocations');
 
-var timeLocationSchema = mongoose.Schema({
-  event_id: {
+const timeLocationSchema = mongoose.Schema({
+  eventId: {
     type: String,
-    unique: true
+    unique: true,
   },
-  start_time: Date,
-  end_time: Date,
+  startTime: Date,
+  endTime: Date,
   series: String,
-  venue_public: Boolean,
-  venue_name: String,
-  address_1: String,
-  address_2: String,
-  address_3: String,
+  venuePublic: Boolean,
+  venueName: String,
+  address1: String,
+  address2: String,
+  address3: String,
   city: String,
   state: String,
   longitude: Number,
-  latitude: Number
+  latitude: Number,
 });
 
-var TimeLocationModel = mongoose.model('TimeLocation', timeLocationSchema);
+const TimeLocationModel = mongoose.model('TimeLocation', timeLocationSchema);
 
-function insertModel(data, callback){
+function insertModel(data, callback) {
   TimeLocationModel.create(data, callback);
-};
+}
 
-function findModel(id, callback){
-  TimeLocationModel.findOne({"event_id": id}, callback);
+function findModel(id, callback) {
+  TimeLocationModel.findOne({ eventId: id }, callback);
 }
 
 // function countAll(callback){
