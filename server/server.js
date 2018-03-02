@@ -11,7 +11,6 @@ const createWhereData = ({
   venuePublic, venueName, address1, address2, address3, city, longitude, latitude,
 }) => {
   let whereData = {};
-  console.log(venuePublic);
   if (venuePublic) {
     whereData = { venueName, city };
     if (address1) whereData.address1 = address1;
