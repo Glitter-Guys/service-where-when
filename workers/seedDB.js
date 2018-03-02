@@ -54,8 +54,6 @@ const insertEachEvent = () => {
     const [startTime, endTime] = convertToStartEndTime(event);
     const structuredEvent = structureEventData(seriesValue, startTime, endTime, event);
 
-    console.log(structuredEvent);
-
     // Write to database
     timeLocationModel.insertModel(structuredEvent, (err) => {
       if (err) console.log(err);
