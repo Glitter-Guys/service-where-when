@@ -1,3 +1,9 @@
+const webpack = require('webpack');
+const middleware = require('webpack-dev-middleware');
+const webpackOptions = require('./../webpack.config.js');
+
+const compiler = webpack(webpackOptions);
+
 const path = require('path');
 const eventDB = require('./../db/models/timeLocation.js');
 const moment = require('moment');
@@ -6,6 +12,10 @@ const express = require('express');
 const app = express();
 
 app.use('/event/:eventid', express.static(path.join(__dirname, './../client')));
+
+app.use(middleware(compiler, {
+  publicPath: webpackOptions.output.publicPath,
+}));
 
 const createWhereData = ({
   venuePublic, venueName, address1, address2, address3, city, longitude, latitude,
