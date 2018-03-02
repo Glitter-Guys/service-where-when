@@ -50,6 +50,7 @@ let insertEachEvent = () => {
   let pathToJSON = path.join(__dirname, "./150UpcomingEvents.json");
   let jsonData = fs.readFileSync(pathToJSON);
   let parsedData = JSON.parse(jsonData);
+  let counter = 0;
 
   parsedData.events.forEach(function(event){
     let seriesValue = createRandomSeries();
@@ -60,12 +61,15 @@ let insertEachEvent = () => {
     // Write to database
     timeLocationModel.insertModel(structuredEvent, function(err){
       if(err) console.log(err);
+      ++counter;
+      if(counter === parsedData.events.length){
+        mongoose.disconnect();
+      }
     });
   });
 }
 
 insertEachEvent();
-// mongoose.disconnect(); // Need figure out how to achieve
 
 exports.createRandomSeries = createRandomSeries;
 exports.convertToStartEndTime = convertToStartEndTime;
