@@ -17,7 +17,7 @@ export default class WhereWhen extends React.Component {
     const url = window.location.href;
     const urlEnd = url.split('/event/')[1];
     const eventId = urlEnd.split('/')[0];
-    fetch('/api/event/' + eventId).then((response) => {
+    fetch(`/api/event/${eventId}`).then((response) => {
       return response.json();
     }).then((jsonData) => {
       this.setState({
@@ -30,13 +30,17 @@ export default class WhereWhen extends React.Component {
   }
 
   render() {
-    const whereData = this.state.whereData;
+    const { whereData } = this.state;
     return (
       <div className="whereWhen">
         <When whenData={this.state.whenData} />
         <Where whereData={whereData} />
         {whereData.venuePublic &&
-          <Map latitude={whereData.latitude} longitude={whereData.longitude} />
+          <Map
+            latitude={whereData.latitude}
+            longitude={whereData.longitude}
+            whereData={whereData}
+          />
         }
       </div>
     );
