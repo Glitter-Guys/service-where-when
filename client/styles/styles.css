@@ -49,3 +49,7 @@ body {
   font-style: normal;
   color: rgba(46,62,72,.6);
 }
+
+.map {
+  width: 100%;
+}
