@@ -15,6 +15,8 @@
     "webpack": "webpack --watch",
     "start": "nodemon server/server.js",
     "test": "jest",
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage",
     "seed": "node workers/seedDB.js"
   },
   "dependencies": {
@@ -35,6 +37,7 @@
     "babel-preset-react": "^6.24.1",
     "enzyme": "^3.3.0",
     "enzyme-adapter-react-16": "^1.1.1",
+    "enzyme-to-json": "^3.3.1",
     "eslint": "^4.18.1",
     "eslint-config-airbnb": "^16.1.0",
     "eslint-config-hackreactor": "git://github.com/reactorcore/eslint-config-hackreactor",
@@ -44,6 +47,7 @@
     "expect": "^22.4.0",
     "jest": "^22.4.2",
     "nodemon": "^1.15.1",
+    "react-test-renderer": "^16.2.0",
     "regenerator-runtime": "^0.11.1",
     "webpack": "^3.11.0",
     "webpack-dev-middleware": "^3.0.0"
@@ -52,6 +56,12 @@
     "presets": [
       "es2015",
       "react"
+    ]
+  },
+  "jest": {
+    "setupFiles": ["./jestSetup.js"],
+    "snapshotSerializers": [
+      "enzyme-to-json/serializer"
     ]
   }
 }
