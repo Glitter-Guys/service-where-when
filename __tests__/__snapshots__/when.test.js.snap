@@ -1,23 +1,5 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<Map /> should render a Map component 1`] = `
-<div
-  className="map"
->
-  <a
-    className="map__link"
-    href="https://www.google.com/maps/search/?api=1&query=30%20Nowhere%20St.%2C%20Sometown%2C%20CA"
-    target="_blank"
-  >
-    <img
-      alt="map of location"
-      className="map__img"
-      src="https://maps.googleapis.com/maps/api/staticmap?key=AIzaSyC54lAZfmFGtXLamlbYzwabbOMHFEdqGwM&center=37.75,-122.419998&size=480x300&zoom=17&scale=2&markers=color%3Ared%7Csize%3Alarge%7C"
-    />
-  </a>
-</div>
-`;
-
 exports[`<When /> should render a When component 1`] = `
 <div
   className="when"
