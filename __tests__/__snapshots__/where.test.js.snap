@@ -1,0 +1,37 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Where /> should render 1`] = `
+<div
+  className="where"
+>
+  <div
+    className="where__icon"
+  >
+    <InlineSVG
+      cacheGetRequests={false}
+      height="24"
+      onLoad={[Function]}
+      src="./icons/location.svg"
+      supportTest={[Function]}
+      uniquifyIDs={true}
+      viewBox="0 0 24 24"
+      width="24"
+      wrapper={[Function]}
+    />
+  </div>
+  <div
+    className="where__text"
+  >
+    <span>
+      <span>
+        A Special Building
+      </span>
+      <address>
+        85 Bluxome St
+         ∙ 
+        San Francisco
+      </address>
+    </span>
+  </div>
+</div>
+`;
