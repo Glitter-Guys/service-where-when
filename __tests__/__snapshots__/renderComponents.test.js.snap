@@ -41,7 +41,9 @@ exports[`<When /> should render a When component 1`] = `
     className="when__text"
   >
     <span>
-      <span>
+      <span
+        className="when__date"
+      >
         <t
           ago={false}
           calendar={false}
@@ -60,41 +62,45 @@ exports[`<When /> should render a When component 1`] = `
           2018-03-13T02:00:00Z
         </t>
       </span>
-      <t
-        ago={false}
-        calendar={false}
-        decimal={false}
-        element="time"
-        filter={[Function]}
-        format="h:mm A"
-        fromNow={false}
-        interval={60000}
-        onChange={[Function]}
-        toNow={false}
-        unit={null}
-        unix={false}
-        utc={false}
+      <span
+        className="when__time"
       >
-        2018-03-13T02:00:00Z
-      </t>
-       to 
-      <t
-        ago={false}
-        calendar={false}
-        decimal={false}
-        element="time"
-        filter={[Function]}
-        format="h:mm A"
-        fromNow={false}
-        interval={60000}
-        onChange={[Function]}
-        toNow={false}
-        unit={null}
-        unix={false}
-        utc={false}
-      >
-        2018-03-13T04:00:00Z
-      </t>
+        <t
+          ago={false}
+          calendar={false}
+          decimal={false}
+          element="time"
+          filter={[Function]}
+          format="h:mm A"
+          fromNow={false}
+          interval={60000}
+          onChange={[Function]}
+          toNow={false}
+          unit={null}
+          unix={false}
+          utc={false}
+        >
+          2018-03-13T02:00:00Z
+        </t>
+         to 
+        <t
+          ago={false}
+          calendar={false}
+          decimal={false}
+          element="time"
+          filter={[Function]}
+          format="h:mm A"
+          fromNow={false}
+          interval={60000}
+          onChange={[Function]}
+          toNow={false}
+          unit={null}
+          unix={false}
+          utc={false}
+        >
+          2018-03-13T04:00:00Z
+        </t>
+      </span>
     </span>
     <span
       className="when__series"
