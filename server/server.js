@@ -5,9 +5,9 @@ const webpackOptions = require('./../webpack.config.js');
 const compiler = webpack(webpackOptions);
 
 const path = require('path');
-const eventDB = require('./../db/models/timeLocation.js');
 const moment = require('moment');
 const express = require('express');
+const eventDB = require('./../db/models/timeLocation.js');
 
 const app = express();
 
