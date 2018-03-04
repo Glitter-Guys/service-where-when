@@ -1,11 +1,12 @@
 const path = require('path');
-const webpack = require('webpack');
 
 module.exports = {
+  mode: 'development',
   entry: './client/app.js',
   output: {
     path: path.resolve(__dirname, './client/build'),
     filename: 'app.bundle.js',
+    publicPath: './',
   },
   module: {
     rules: [
