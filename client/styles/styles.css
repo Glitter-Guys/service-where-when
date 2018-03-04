@@ -45,6 +45,10 @@ body {
   display: block;
 }
 
+.when__series {
+  color: rgba(46,62,72,.6);
+}
+
 .where address {
   font-style: normal;
   color: rgba(46,62,72,.6);
