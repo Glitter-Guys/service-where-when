@@ -17,3 +17,90 @@ exports[`<Map /> should render a Map component 1`] = `
   </a>
 </div>
 `;
+
+exports[`<When /> should render a When component 1`] = `
+<div
+  className="when"
+>
+  <div
+    className="when__icon"
+  >
+    <InlineSVG
+      cacheGetRequests={false}
+      height="24"
+      onLoad={[Function]}
+      src="./icons/clock.svg"
+      supportTest={[Function]}
+      uniquifyIDs={true}
+      viewBox="0 0 24 24"
+      width="24"
+      wrapper={[Function]}
+    />
+  </div>
+  <div
+    className="when__text"
+  >
+    <span>
+      <span>
+        <t
+          ago={false}
+          calendar={false}
+          decimal={false}
+          element="time"
+          filter={[Function]}
+          format="dddd, MMMM D YYYY"
+          fromNow={false}
+          interval={60000}
+          onChange={[Function]}
+          toNow={false}
+          unit={null}
+          unix={false}
+          utc={false}
+        >
+          2018-03-13T02:00:00Z
+        </t>
+      </span>
+      <t
+        ago={false}
+        calendar={false}
+        decimal={false}
+        element="time"
+        filter={[Function]}
+        format="h:mm A"
+        fromNow={false}
+        interval={60000}
+        onChange={[Function]}
+        toNow={false}
+        unit={null}
+        unix={false}
+        utc={false}
+      >
+        2018-03-13T02:00:00Z
+      </t>
+       to 
+      <t
+        ago={false}
+        calendar={false}
+        decimal={false}
+        element="time"
+        filter={[Function]}
+        format="h:mm A"
+        fromNow={false}
+        interval={60000}
+        onChange={[Function]}
+        toNow={false}
+        unit={null}
+        unix={false}
+        utc={false}
+      >
+        2018-03-13T04:00:00Z
+      </t>
+    </span>
+    <span
+      className="when__series"
+    >
+      Repeats every week
+    </span>
+  </div>
+</div>
+`;

@@ -19,7 +19,7 @@ describe('<When />', () => {
     endTime: '2018-03-13T04:00:00Z',
     series: 'weekly'
   }
-  const whenWrap = shallow(<Map whenData={dummyWhenData} />);
+  const whenWrap = shallow(<When whenData={dummyWhenData} />);
   
  it('should be defined', () => {
    expect(When).toBeDefined();
@@ -31,9 +31,19 @@ describe('<When />', () => {
  
  it('should display series info', () => {
     const seriesTxt = whenWrap.find('.when__series').text();
-    console.log(seriesTxt);
     expect(seriesTxt).toBe('Repeats every week');
   });
+  
+  it('should not display series info when null', () => {
+    const dummyWhenData2 = {
+      startTime: '2018-03-13T02:00:00Z',
+      endTime: '2018-03-13T04:00:00Z',
+      series: null
+    }
+    const whenWrap2 = shallow(<When whenData={dummyWhenData2} />);
+    const seriesTxt2 = whenWrap2.find('.when__series').text();
+    expect(seriesTxt2).toBe('');
+   });
  
 });
 
