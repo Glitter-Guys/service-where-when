@@ -18,11 +18,16 @@ app.use(middleware(compiler, {
 }));
 
 const createWhereData = ({
-  venuePublic, venueName, address1, address2, address3, city, longitude, latitude,
+  venuePublic, venueName, address1, address2, address3, city, state, longitude, latitude,
 }) => {
-  let whereData = {};
+  let whereData = { venuePublic };
   if (venuePublic) {
-    whereData = { venueName, city };
+    whereData = {
+      venuePublic,
+      venueName,
+      city,
+      state,
+    };
     if (address1) whereData.address1 = address1;
     if (address2) whereData.address2 = address2;
     if (address3) whereData.address3 = address3;
