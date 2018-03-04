@@ -1,5 +1,5 @@
 import React from 'react';
-import { googleMapsKey } from './../../config/apiKeys';
+// import { googleMapsKey } from './../../config/apiKeys';
 
 const Map = (props) => {
   const googleMapsCall = `https://maps.googleapis.com/maps/api/staticmap?key=${googleMapsKey}&center=${props.latitude},${props.longitude}&size=480x300&zoom=17&scale=2&markers=color%3Ared%7Csize%3Alarge%7C`;

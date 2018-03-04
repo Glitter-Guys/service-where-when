@@ -30,7 +30,7 @@ jobs:
           - v1-dependencies-
 
       - run: npm install
-      - run: CI=true yarn test:coverage
+      - run: CI=true npm test:coverage
 
       - save_cache:
           paths:
