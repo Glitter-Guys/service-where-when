@@ -7,10 +7,9 @@ describe('<WhereWhen />', () => {
  it('should be defined', () => {
    expect(WhereWhen).toBeDefined();
  });
-});
-
-describe('<Where />', () => {
- it('should be defined', () => {
-   expect(Where).toBeDefined();
- });
+ 
+ it('should render', () => {
+   const WhereWhenWrap = <WhereWhen />;
+   expect(WhereWhenWrap).toMatchSnapshot();
+ })
 });

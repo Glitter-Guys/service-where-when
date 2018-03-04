@@ -8,7 +8,7 @@ const Where = ({ whereData }) => (
       <SVG viewBox="0 0 24 24" height="24" width="24" src="./icons/location.svg" />
     </div>
     <div className="where__text">
-      {whereData.venueName ?
+      {whereData.venuePublic ?
         <span>
           <span>{whereData.venueName}</span>
           <address>
@@ -17,7 +17,7 @@ const Where = ({ whereData }) => (
             {whereData.address3} ∙ {whereData.city}
           </address>
         </span>
-      : <span>Needs a location</span>}
+      : <span className="where__default">Needs a location</span>}
     </div>
   </div>
 );
