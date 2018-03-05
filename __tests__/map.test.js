@@ -1,7 +1,6 @@
 import React from 'react';
 import expect from 'expect';
 import Map from './../client/components/map.jsx';
-import { googleMapsKey } from './../config/apiKeys';
 
 describe('<Map />', () => {
   const dummyWhereData = {
@@ -28,7 +27,7 @@ describe('<Map />', () => {
 
   it('should insert a map img', () => {
     const src = mapWrap.find('img').props().src;
-    const expectedSrc = `https://maps.googleapis.com/maps/api/staticmap?key=${googleMapsKey}&center=37.75,-122.419998&size=480x300&zoom=17&scale=2&markers=color%3Ared%7Csize%3Alarge%7C`;
+    const expectedSrc = `https://maps.googleapis.com/maps/api/staticmap?key=keygoeshere&center=37.75,-122.419998&size=480x300&zoom=17&scale=2&markers=color%3Ared%7Csize%3Alarge%7C`;
     expect(src).toBe(expectedSrc);
   });
 });
