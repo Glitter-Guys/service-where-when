@@ -1,7 +1,6 @@
 import React from 'react';
 import expect from 'expect';
 import Map from './../client/components/map.jsx';
-import { googleMapsKey } from './../config/apiKeys';
 
 describe('<Map />', () => {
   const dummyWhereData = {
