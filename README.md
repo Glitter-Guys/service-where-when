@@ -6,6 +6,9 @@
 
   - https://github.com/TeamSparkles/service-header
   - https://github.com/TeamSparkles/service-attendees
+  - https://github.com/TeamSparkles/service-description
+  - https://github.com/TeamSparkles/service-suggestions
+  - https://github.com/TeamSparkles/proxy-becca
 
 ## Table of Contents
 
@@ -15,7 +18,19 @@
 
 ## Usage
 
-> Some usage instructions
+From the root directory...
+
+To seed the database (named timeLocation):
+npm run seed
+
+To run tests:
+npm test
+
+To run server at port 9000:
+npm start
+
+To run webpack:
+npm run webpack
 
 ## Requirements
 
