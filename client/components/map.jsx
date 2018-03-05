@@ -1,8 +1,7 @@
 import React from 'react';
-// import { googleMapsKey } from './../../config/apiKeys';
 
 const Map = (props) => {
-  let googleMapsKey = googleMapsKey || 'keygoeshere';
+  let googleMapsKey = global.googleMapsKey || 'keygoeshere';
   const googleMapsCall = `https://maps.googleapis.com/maps/api/staticmap?key=${googleMapsKey}&center=${props.latitude},${props.longitude}&size=480x300&zoom=17&scale=2&markers=color%3Ared%7Csize%3Alarge%7C`;
   const addressToQuery = `${props.whereData.address1}, ${props.whereData.city}, ${props.whereData.state}`;
   const encodedAddress = encodeURIComponent(addressToQuery);
