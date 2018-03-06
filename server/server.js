@@ -11,7 +11,11 @@ const eventDB = require('./../db/models/timeLocation.js');
 
 const app = express();
 
+// Comment this line out for proxy server
 app.use('/event/:eventid', express.static(path.join(__dirname, './../client/dist')));
+
+// Comment the line in for proxy server
+// app.use(express.static(path.join(__dirname, './../client/dist')));
 
 app.use(middleware(compiler, {
   publicPath: webpackOptions.output.publicPath,
