@@ -11,8 +11,8 @@ const eventDB = require('./../db/models/timeLocation.js');
 
 const app = express();
 
-// app.use('/event/:eventid', express.static(path.join(__dirname, './../client')));
-app.use(express.static(path.join(__dirname, './../client')));
+// app.use('/event/:eventid', express.static(path.join(__dirname, './../client/dist')));
+app.use('/', express.static(path.join(__dirname, './../client/dist')));
 
 app.use(middleware(compiler, {
   publicPath: webpackOptions.output.publicPath,

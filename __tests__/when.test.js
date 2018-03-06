@@ -1,6 +1,6 @@
 import React from 'react';
 import expect from 'expect';
-import When from './../client/components/when.jsx';
+import When from './../client/src/components/when.jsx';
 
 
 describe('<When />', () => {
