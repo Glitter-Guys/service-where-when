@@ -35,7 +35,7 @@ export default class WhereWhen extends React.Component {
       <div className="whereWhen">
         <When whenData={this.state.whenData} />
         <Where whereData={whereData} />
-        {whereData.venuePublic &&
+        {whereData.venueName &&
           <Map
             latitude={whereData.latitude}
             longitude={whereData.longitude}
