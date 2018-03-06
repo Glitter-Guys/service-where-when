@@ -1,0 +1,20 @@
+body {
+  margin: 0;
+  background-color: #F6F7F8;
+  display: flex;
+  justify-content: center;
+  margin-top: 60px;
+}
+
+address {
+  font-style: normal;
+}
+
+.whereWhen {
+  font-family: "Graphik Meetup";
+  background-color: #fff;
+  border-radius: 8px;
+  width: 350px;
+  display: flex;
+  flex-direction: column;
+}

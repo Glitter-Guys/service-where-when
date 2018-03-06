@@ -1,7 +1,9 @@
 import React from 'react';
 import SVG from 'react-inlinesvg';
 import Moment from 'react-moment';
-// import styles from './styles/styles.css'
+import TextSectionsStyle from './../../dist/styles/textSections.css';
+import ReusableStyles from './../../dist/styles/reusable.css';
+
 
 const When = ({ whenData }) => {
   const dateTimeFormat = 'dddd, MMMM D YYYY h:mm A';
@@ -18,8 +20,8 @@ const When = ({ whenData }) => {
   }
 
   return (
-    <div className="when">
-      <div className="when__icon">
+    <div className={TextSectionsStyle.textSection}>
+      <div className={TextSectionsStyle.icon}>
         <SVG viewBox="0 0 24 24" height="24" width="24" src="./icons/clock.svg" />
       </div>
       <div className="when__text">
@@ -39,7 +41,7 @@ const When = ({ whenData }) => {
             </span>
           </span>
         }
-        <span className="when__series">{seriesText}</span>
+        <span className={ReusableStyles.secondaryText}>{seriesText}</span>
       </div>
     </div>
   );
