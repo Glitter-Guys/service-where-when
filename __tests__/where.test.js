@@ -1,6 +1,6 @@
 import React from 'react';
 import expect from 'expect';
-import Where from './../client/components/where.jsx';
+import Where from './../client/src/components/where.jsx';
 
 describe('<Where />', () => {
   const dummyWhereData = {
