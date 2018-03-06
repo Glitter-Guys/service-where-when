@@ -11,7 +11,7 @@ exports[`<Map /> should render a Map component 1`] = `
   >
     <img
       alt="map of location"
-      className="map__img"
+      className="image"
       src="https://maps.googleapis.com/maps/api/staticmap?key=keygoeshere&center=37.75,-122.419998&size=480x300&zoom=17&scale=2&markers=color%3Ared%7Csize%3Alarge%7C"
     />
   </a>

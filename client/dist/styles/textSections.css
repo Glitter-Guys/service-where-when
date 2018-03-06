@@ -1,0 +1,18 @@
+.textSection {
+  display: flex;
+  font-size: .875rem;
+  line-height: 1.6;
+  padding: 15px;
+}
+
+.icon {
+  display: flex;
+  flex-direction: column;
+  margin: 0 20px;
+  stroke: transparent;
+  fill: rgba(46,62,72,.6);
+}
+
+.textSection span {
+  display: block;
+}
