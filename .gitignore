@@ -1,4 +1,4 @@
 node_modules
-client/build
+client/dist/build
 config
 package-lock.json

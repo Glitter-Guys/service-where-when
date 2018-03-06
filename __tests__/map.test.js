@@ -1,6 +1,6 @@
 import React from 'react';
 import expect from 'expect';
-import Map from './../client/components/map.jsx';
+import Map from './../client/src/components/map.jsx';
 
 describe('<Map />', () => {
   const dummyWhereData = {
