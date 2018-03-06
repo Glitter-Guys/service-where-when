@@ -1,4 +1,5 @@
 import React from 'react';
+import MapStyles from './../../dist/styles/map.css';
 
 const Map = (props) => {
   let googleMapsKey = global.googleMapsKey || 'keygoeshere';
@@ -10,7 +11,7 @@ const Map = (props) => {
   return (
     <div className="map">
       <a className="map__link" href={googleMapsLink} target="_blank">
-        <img className="map__img" alt="map of location" src={googleMapsCall} />
+        <img className={MapStyles.image} alt="map of location" src={googleMapsCall} />
       </a>
     </div>
   );

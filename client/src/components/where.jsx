@@ -1,17 +1,18 @@
 import React from 'react';
 import SVG from 'react-inlinesvg';
-// import styles from './styles/styles.css'
+import TextSectionsStyle from './../../dist/styles/textSections.css';
+import ReusableStyles from './../../dist/styles/reusable.css';
 
 const Where = ({ whereData }) => (
-  <div className="where">
-    <div className="where__icon">
+  <div className={TextSectionsStyle.textSection}>
+    <div className={TextSectionsStyle.icon}>
       <SVG viewBox="0 0 24 24" height="24" width="24" src="./icons/location.svg" />
     </div>
     <div className="where__text">
       {whereData.venuePublic ?
         <span>
           <span>{whereData.venueName}</span>
-          <address>
+          <address className={ReusableStyles.secondaryText}>
             {whereData.address1}
             {whereData.address2}
             {whereData.address3} ∙ {whereData.city}

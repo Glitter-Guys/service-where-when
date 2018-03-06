@@ -2,10 +2,10 @@
 
 exports[`<When /> should render a When component 1`] = `
 <div
-  className="when"
+  className="textSection"
 >
   <div
-    className="when__icon"
+    className="icon"
   >
     <InlineSVG
       cacheGetRequests={false}
@@ -85,7 +85,8 @@ exports[`<When /> should render a When component 1`] = `
       </span>
     </span>
     <span
-      className="when__series"
+      className="secondaryText"
+      data-test="when__series"
     >
       Repeats every week
     </span>

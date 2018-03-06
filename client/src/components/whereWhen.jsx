@@ -2,7 +2,7 @@ import React from 'react';
 import When from './when.jsx';
 import Where from './where.jsx';
 import Map from './map.jsx';
-// import styles from './styles/styles.css'
+import WhereWhenStyles from './../../dist/styles/whereWhen.css';
 
 export default class WhereWhen extends React.Component {
   constructor(props) {
@@ -32,7 +32,7 @@ export default class WhereWhen extends React.Component {
   render() {
     const { whereData } = this.state;
     return (
-      <div className="whereWhen">
+      <div className={WhereWhenStyles.whereWhen}>
         <When whenData={this.state.whenData} />
         <Where whereData={whereData} />
         {whereData.venueName &&

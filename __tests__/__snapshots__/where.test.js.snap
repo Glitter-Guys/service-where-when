@@ -2,10 +2,10 @@
 
 exports[`<Where /> should render 1`] = `
 <div
-  className="where"
+  className="textSection"
 >
   <div
-    className="where__icon"
+    className="icon"
   >
     <InlineSVG
       cacheGetRequests={false}
@@ -26,7 +26,9 @@ exports[`<Where /> should render 1`] = `
       <span>
         A Special Building
       </span>
-      <address>
+      <address
+        className="secondaryText"
+      >
         85 Bluxome St
          ∙ 
         San Francisco
