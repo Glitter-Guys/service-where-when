@@ -1,6 +1,7 @@
 const webpack = require('webpack');
 const middleware = require('webpack-dev-middleware');
 const webpackOptions = require('./../webpack.config.js');
+const cors = require('cors');
 
 const compiler = webpack(webpackOptions);
 
@@ -16,6 +17,8 @@ const app = express();
 
 // Comment the line in for proxy server
 app.use(express.static(path.join(__dirname, './../client/dist')));
+
+app.use(cors());
 
 app.use(middleware(compiler, {
   publicPath: webpackOptions.output.publicPath,
