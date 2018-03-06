@@ -27,8 +27,12 @@ const When = ({ whenData }) => {
       <div className="when__text">
         {whenData.multiDay ?
           <span>
-            <span className="when__start"><Moment format={dateTimeFormat}>{whenData.startTime}</Moment></span>
-            <span className="when__end">to&nbsp;<Moment format={dateTimeFormat}>{whenData.endTime}</Moment></span>
+            <span className="when__start">
+              <Moment format={dateTimeFormat}>{whenData.startTime}</Moment>
+            </span>
+            <span className="when__end">
+              to&nbsp;<Moment format={dateTimeFormat}>{whenData.endTime}</Moment>
+            </span>
           </span>
         :
           <span>
@@ -41,7 +45,7 @@ const When = ({ whenData }) => {
             </span>
           </span>
         }
-        <span className={ReusableStyles.secondaryText}>{seriesText}</span>
+        <span data-test="when__series" className={ReusableStyles.secondaryText}>{seriesText}</span>
       </div>
     </div>
   );
