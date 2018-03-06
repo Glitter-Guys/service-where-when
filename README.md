@@ -23,14 +23,19 @@ From the root directory...
 To seed the database (named timeLocation):
 npm run seed
 
-To run tests:
-npm test
+To setup API Key:
+See instructions in the config/addApiKeyHere.js file
+Basically, you'll need to get a Google Maps API key here: https://developers.google.com/maps/documentation/static-maps/
+And then add that key to addApiKeyHere.js and rename that file apiKeys.js
 
-To run server at port 9000:
+To run webpack and server at port 9000:
 npm start
 
-To run webpack:
+To run webpack alone:
 npm run webpack
+
+To run tests:
+npm test
 
 ## Requirements
 
