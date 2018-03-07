@@ -74,5 +74,4 @@
       "\\.(css|less)$": "identity-obj-proxy"
     }
   }
-
 }
