@@ -12,13 +12,13 @@ const eventDB = require('./../db/models/timeLocation.js');
 
 const app = express();
 
+app.use(cors());
+
 // Comment this line out for proxy server
 app.use('/event/:eventid', express.static(path.join(__dirname, './../client/dist')));
 
 // Comment the line in for proxy server
 // app.use(express.static(path.join(__dirname, './../client/dist')));
-
-app.use(cors());
 
 app.use(middleware(compiler, {
   publicPath: webpackOptions.output.publicPath,
