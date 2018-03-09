@@ -2,3 +2,4 @@ node_modules
 client/dist/build
 config
 package-lock.json
+my-ec2-key-pair.pem
