@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-mongoose.connect('mongodb://localhost/timeLocations');
+// mongoose.connect('mongodb://database/timeLocations');
 
 const timeLocationSchema = mongoose.Schema({
   eventId: {
@@ -35,6 +35,7 @@ function findModel(id, callback) {
 //   TimeLocationModel.count({}, callback);
 // };
 
+exports.Model = TimeLocationModel;
 exports.insertModel = insertModel;
 exports.findModel = findModel;
 // exports.countAll = countAll;

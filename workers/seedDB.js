@@ -4,7 +4,7 @@ const mongoose = require('mongoose');
 const moment = require('moment');
 const timeLocationModel = require('./../db/models/timeLocation.js');
 
-mongoose.connect('mongodb://localhost/timeLocations');
+mongoose.connect('mongodb://database/timeLocations');
 
 // Randomly create fake data for occasional event as weekly or monthly
 const createRandomSeries = () => {
@@ -47,18 +47,23 @@ const insertEachEvent = () => {
   const pathToJSON = path.join(__dirname, './150UpcomingEvents.json');
   const jsonData = fs.readFileSync(pathToJSON);
   const parsedData = JSON.parse(jsonData);
-  let counter = 0;
+  //let counter = 0;
+  let counter = parsedData.events.length;
 
   parsedData.events.forEach((event) => {
     const seriesValue = createRandomSeries();
     const [startTime, endTime] = convertToStartEndTime(event);
     const structuredEvent = structureEventData(seriesValue, startTime, endTime, event);
+    const newEntry = new timeLocationModel.Model(structuredEvent);
 
     // Write to database
-    timeLocationModel.insertModel(structuredEvent, (err) => {
+    newEntry.save((err) => {
+      counter -= 1;
       if (err) console.log(err);
-      counter += 1;
-      if (counter === parsedData.events.length) {
+      console.log(counter + ' event inserted');
+      if (counter === 0) {
+        console.log('is disconnected');
+        console.log(counter);
         mongoose.disconnect();
       }
     });

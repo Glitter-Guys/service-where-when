@@ -13,11 +13,12 @@
   },
   "scripts": {
     "webpack": "webpack --watch",
-    "start": "nodemon server/server.js",
+    "start": "webpack -d && node server/server.js",
     "test": "jest",
     "test:watch": "jest --watch",
     "test:coverage": "jest --coverage",
-    "seed": "node workers/seedDB.js"
+    "seed": "node workers/seedDB.js",
+    "docker": "npm run seed && npm start"
   },
   "dependencies": {
     "express": "^4.16.2",

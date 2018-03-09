@@ -1,6 +1,7 @@
 const webpack = require('webpack');
 const middleware = require('webpack-dev-middleware');
 const webpackOptions = require('./../webpack.config.js');
+const mongoose = require('mongoose');
 
 const compiler = webpack(webpackOptions);
 
@@ -13,6 +14,8 @@ const app = express();
 
 // Comment this line out for proxy server
 app.use('/event/:eventid', express.static(path.join(__dirname, './../client/dist')));
+
+mongoose.connect('mongodb://database/timeLocations');
 
 // Comment the line in for proxy server
 // app.use(express.static(path.join(__dirname, './../client/dist')));
@@ -65,4 +68,4 @@ app.get('/api/event/:eventid', (req, res) => {
   });
 });
 
-app.listen('9000', '127.0.0.1', () => console.log('Listening on port 9000'));
+app.listen('9000', () => console.log('Listening on port 9000'));
