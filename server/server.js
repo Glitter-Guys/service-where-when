@@ -54,7 +54,7 @@ const createWhenData = ({ startTime, endTime, series }) => {
   return whenData;
 };
 
-app.get('/api/event/:eventid', (req, res) => {
+app.get('/api/:eventid/wherewhen', (req, res) => {
   const eventId = `${req.params.eventid}`;
   eventDB.findModel(eventId, (err, eventDataFromAPI) => {
     if (err) {

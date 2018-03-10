@@ -17,7 +17,7 @@ export default class WhereWhen extends React.Component {
     const url = window.location.href;
     const urlEnd = url.split('/event/')[1];
     const eventId = urlEnd.split('/')[0];
-    fetch(`/api/event/${eventId}`).then((response) => {
+    fetch(`/api/${eventId}/wherewhen`).then((response) => {
       return response.json();
     }).then((jsonData) => {
       this.setState({
