@@ -47,7 +47,6 @@ const insertEachEvent = () => {
   const pathToJSON = path.join(__dirname, './150UpcomingEvents.json');
   const jsonData = fs.readFileSync(pathToJSON);
   const parsedData = JSON.parse(jsonData);
-  //let counter = 0;
   let counter = parsedData.events.length;
 
   parsedData.events.forEach((event) => {
@@ -60,10 +59,7 @@ const insertEachEvent = () => {
     newEntry.save((err) => {
       counter -= 1;
       if (err) console.log(err);
-      console.log(counter + ' event inserted');
       if (counter === 0) {
-        console.log('is disconnected');
-        console.log(counter);
         mongoose.disconnect();
       }
     });
