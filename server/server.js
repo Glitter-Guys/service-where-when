@@ -55,6 +55,7 @@ const createWhenData = ({ startTime, endTime, series }) => {
 };
 
 app.get('/api/:eventid/wherewhen', (req, res) => {
+  mongoose.connect('mongodb://database/timeLocations');
   const eventId = `${req.params.eventid}`;
   eventDB.findModel(eventId, (err, eventDataFromAPI) => {
     if (err) {
@@ -65,7 +66,6 @@ app.get('/api/:eventid/wherewhen', (req, res) => {
         whenData: createWhenData(eventDataFromAPI),
       });
     }
-    mongoose.disconnect();
   });
 });
 
