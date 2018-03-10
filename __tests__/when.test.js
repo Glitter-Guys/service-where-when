@@ -37,7 +37,7 @@ describe('<When />', () => {
  });
 
  it('should display series info', () => {
-    const seriesTxt = whenWrap.find('.when__series').text();
+    const seriesTxt = whenWrap.find('[data-test="when__series"]').text();
     expect(seriesTxt).toBe('Repeats every week');
   });
 
@@ -48,7 +48,7 @@ describe('<When />', () => {
       series: null,
     };
     const whenWrapWithNull = shallow(<When whenData={dummyWhenDataWithNull} />);
-    const seriesTxt2 = whenWrapWithNull.find('.when__series').text();
+    const seriesTxt2 = whenWrapWithNull.find('[data-test="when__series"]').text();
     expect(seriesTxt2).toBe('');
    });
 
